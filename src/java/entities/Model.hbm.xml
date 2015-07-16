@@ -21,7 +21,7 @@
             <column name="speed" />
         </property>
         <filter name="name" condition="name like '%' :nameParam '%'"/>
-        <filter name="year" condition="year=:yearParam"/>
+        <filter name="year" condition=":yearParam >=year"/>
         <filter name="fuel" condition="fuel=:fuelParam"/>
         <filter name="country" condition="brand in (select b.name from Brand b where b.country like '%' :countryParam '%')"/>
         

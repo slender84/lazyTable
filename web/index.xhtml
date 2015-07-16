@@ -44,9 +44,13 @@
             
         </h:form>
         
+        <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()"/>
         
+        <p:dialog widgetVar="statusDialog"  showHeader="false">
+            
+            <p:graphicImage value="/resources/ajax_loading.gif"/>    
         
-        
+        </p:dialog>
         
         
     </h:body>
