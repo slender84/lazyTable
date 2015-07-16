@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            
+            <p:dataTable var="model" value="#{modelController.model}" rowKey="#{model.name}" rows="10" lazy="true"
+                         paginator="true" paginatorPosition="bottom" sortOrder="descending" sortBy="#{model.name}"
+                         emptyMessage="there are no models">
+            
+                <p:column headerText="name" filterBy="#{model.name}" sortBy="#{model.name}">
+                    
+                    <h:outputText value="#{model.name}"/>
+                    
+                </p:column>
+            
+                <p:column headerText="year" sortBy="#{model.year}" filterBy="#{model.year}">
+                
+                    <h:outputText value="#{model.year}"/>
+                    
+                </p:column>
+                
+                
+                <p:column headerText="fuel" filterBy="#{model.fuel}" sortBy="#{model.fuel}">
+                
+                    <h:outputText value="#{model.fuel}"/>
+                    
+                </p:column>
+                
+                <p:column headerText="country" filterBy="#{model.brand.country}" sortBy="#{model.brand.country}">
+                
+                    <h:outputText value="#{model.brand.country}"/>
+                
+                </p:column>
+            
+            </p:dataTable>
+            
+            
+        </h:form>
+        
+        
+        
+        
+        
+        
+    </h:body>
+</html>
+
